@@ -8,8 +8,15 @@ class PanSVG extends HTMLElement {
     svg.style.touchAction = "none"; // prevent touch scrolling
     this.appendChild(svg);
 
+    // Check if URL has "play" param
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("play")) {
+      this.classList.add("loop");
+    }
+
     // Create group to apply pan & zoom
     const g = document.createElementNS(svgNS, "g");
+    g.setAttribute("class", "map");
     svg.appendChild(g);
 
     const imgs = [];
