@@ -15,3 +15,12 @@ canvas {
 pan-svg {
   display: block;
 }
+
+.hover-state {
+    opacity: 0;
+
+    &:hover {
+        opacity: 1;
+        cursor: default;
+    }
+}
